@@ -1,0 +1,235 @@
+<!--
+Author - Thomas Bowidowicz
+CS351L - Project 2 - Mexican Train Dominoes
+
+This is the FXML document that does all of the styling for the GUI version of
+the game. I used a borderpane layout with VBoxes in each section to get the
+layout I was looking for. Inside each of the VBoxes are multiple HBoxes which
+hold the train values and other labels. At the bottom of the borderpane is
+a menu section with textfields and buttons that allow the use to manipulate
+the game.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.shape.Rectangle?>
+
+<BorderPane fx:controller="Controller"
+            xmlns:fx="http://javafx.com/fxml">
+    <top>
+        <VBox id="topInfo">
+            <HBox  style="-fx-background-color: moccasin" alignment="CENTER">
+                <Label style="-fx-background-color: moccasin"
+                       text="Current Player: " alignment="CENTER"/>
+                <Label fx:id="currentPlayerLabel"
+                       style="-fx-background-color: moccasin"
+                       text=""  alignment="CENTER"/>
+            </HBox>
+
+            <HBox fx:id="currentPlayer"  style="-fx-background-color: moccasin"
+                  alignment="CENTER">
+            </HBox>
+
+            <HBox  style="-fx-background-color: moccasin" alignment="TOP_LEFT">
+                <Label text="Player 1's Hand:"
+                       style="-fx-background-color: moccasin"
+                       alignment="TOP_LEFT"/>
+            </HBox>
+
+            <HBox fx:id="playerOneHand"  style="-fx-background-color: moccasin"
+                  alignment="TOP_LEFT">
+            </HBox>
+
+            <HBox  style="-fx-background-color: moccasin" alignment="TOP_LEFT">
+                <Label text="Player 2's Hand:"
+                       style="-fx-background-color: moccasin"
+                       alignment="TOP_LEFT"/>
+            </HBox>
+            <HBox fx:id="playerTwoHand"  style="-fx-background-color: moccasin"
+                  alignment="TOP_LEFT">
+            </HBox>
+
+            <HBox  style="-fx-background-color: moccasin" alignment="TOP_LEFT">
+                <Label text="Player 3's Hand:"
+                       style="-fx-background-color: moccasin"
+                       alignment="TOP_LEFT"/>
+            </HBox>
+            <HBox fx:id="playerThreeHand"  style="-fx-background-color: moccasin"
+                  alignment="TOP_LEFT">
+            </HBox>
+
+            <HBox  style="-fx-background-color: moccasin" alignment="TOP_LEFT">
+                <Label text="Player 4's Hand:"
+                       style="-fx-background-color: moccasin"
+                       alignment="TOP_LEFT"/>
+            </HBox>
+            <HBox fx:id="playerFourHand"  style="-fx-background-color: moccasin"
+                  alignment="TOP_LEFT">
+            </HBox>
+        </VBox>
+    </top>
+    <left>
+
+    </left>
+    <center>
+            <VBox fx:id="board" style="-fx-background-color: darkgreen">
+
+                <HBox style="-fx-background-color: darkgreen" spacing="10"
+                      alignment="CENTER">
+                    <Label fx:id="inGameText"
+                           style="-fx-background-color: darkgreen"
+                           alignment="CENTER">
+                    </Label>
+                </HBox>
+
+                <HBox style="-fx-background-color: darkgreen" spacing="10"
+                      alignment="TOP_LEFT">
+                    <Label fx:id="centerTrainLabel" text="Center Train: "/>
+                </HBox>
+                <HBox fx:id="centerTrain" alignment="TOP_LEFT"  spacing="5"
+                      style="-fx-background-color: darkgreen">
+                </HBox>
+                <HBox fx:id="centerTrainBottom"
+                      style="-fx-background-color: darkgreen" spacing="5"
+                      alignment="TOP_LEFT">
+                    <Label text="    " alignment="CENTER_LEFT"></Label>
+                </HBox>
+
+                <HBox style="-fx-background-color: darkgreen" spacing="10"
+                      alignment="TOP_LEFT">
+                    <Label fx:id="mexicanTrainLabel" text="Mexican Train: "/>
+                </HBox>
+
+                <HBox fx:id="mexicanTrain" alignment="TOP_LEFT"  spacing="5"
+                      style="-fx-background-color: darkgreen">
+                </HBox>
+                <HBox fx:id="mexicanTrainBottom"
+                      style="-fx-background-color: darkgreen" spacing="5"
+                      alignment="TOP_LEFT">
+                    <Label text="    " alignment="CENTER_LEFT"></Label>
+                </HBox>
+
+                <HBox style="-fx-background-color: darkgreen" spacing="10"
+                      alignment="TOP_LEFT">
+                    <Label  text="Player 1 Train: "/>
+                </HBox>
+
+                <HBox fx:id="playerOneTrain" alignment="TOP_LEFT"  spacing="5"
+                      style="-fx-background-color: darkgreen">
+                </HBox>
+                <HBox fx:id="playerOneTrainBottom"
+                      style="-fx-background-color: darkgreen" spacing="5"
+                      alignment="TOP_LEFT">
+                    <Label text="    " alignment="CENTER_LEFT"></Label>
+                </HBox>
+
+                <HBox style="-fx-background-color: darkgreen" spacing="10"
+                      alignment="TOP_LEFT">
+                    <Label  text="Player 2 Train: "/>
+                </HBox>
+                <HBox fx:id="playerTwoTrain" alignment="TOP_LEFT"  spacing="5"
+                      style="-fx-background-color: darkgreen">
+                </HBox>
+                <HBox fx:id="playerTwoTrainBottom"
+                      style="-fx-background-color: darkgreen" spacing="5"
+                      alignment="TOP_LEFT">
+                    <Label text="    " alignment="CENTER_LEFT"></Label>
+                </HBox>
+
+                <HBox style="-fx-background-color: darkgreen" spacing="10"
+                      alignment="TOP_LEFT">
+                    <Label  text="Player 3 Train: "/>
+                </HBox>
+
+                <HBox fx:id="playerThreeTrain" alignment="TOP_LEFT"
+                      spacing="5" style="-fx-background-color: darkgreen">
+                </HBox>
+                <HBox fx:id="playerThreeTrainBottom"
+                      style="-fx-background-color: darkgreen" spacing="5"
+                      alignment="TOP_LEFT">
+                    <Label text="    " alignment="CENTER_LEFT"></Label>
+                </HBox>
+
+                <HBox style="-fx-background-color: darkgreen" spacing="10"
+                      alignment="TOP_LEFT">
+                    <Label  text="Player 4 Train: "/>
+                </HBox>
+
+                <HBox fx:id="playerFourTrain" alignment="TOP_LEFT"  spacing="5"
+                      style="-fx-background-color: darkgreen">
+                </HBox>
+                <HBox fx:id="playerFourTrainBottom"
+                      style="-fx-background-color: darkgreen" spacing="5"
+                      alignment="TOP_LEFT">
+                    <Label text="    " alignment="CENTER_LEFT"></Label>
+                </HBox>
+            </VBox>
+    </center>
+    <right>
+
+    </right>
+    <bottom>
+        <VBox id="bottomInfo" style="-fx-background-color: cadetblue"
+              minHeight="100">
+            <HBox fx:id="boneyardLabel" style="-fx-background-color: cadetblue"
+                  spacing="5" alignment="CENTER_LEFT">
+                <Label text="Boneyard" alignment="CENTER"/>
+            </HBox>
+            <HBox fx:id="boneyardTop" style="-fx-background-color: cadetblue"
+                  spacing="5" alignment="CENTER_LEFT">
+
+            </HBox>
+            <HBox fx:id="boneyardBottom" style="-fx-background-color: cadetblue"
+                  spacing="5" alignment="CENTER_LEFT">
+                <Label text="    " alignment="CENTER_LEFT"></Label>
+            </HBox>
+            <HBox fx:id="menu" style="-fx-background-color: moccasin" spacing="10"
+                  minHeight="50" alignment="CENTER">
+                <Button fx:id="play" text="PLAY DOMINO" alignment="BOTTOM_CENTER"
+                        onAction="#handlePlayButton"></Button>
+                <Button fx:id="draw" text="DRAW DOMINO" alignment="BOTTOM_CENTER"
+                        onAction="#handleDrawButton"></Button>
+                <Button fx:id="cantPlay" text="CAN'T PLAY" alignment="BOTTOM_CENTER"
+                        onAction="#handleCantPlay"></Button>
+                <Button fx:id="quit" text="QUIT" alignment="BOTTOM_CENTER"
+                        onAction="#handleQuitButton"></Button>
+                <Button fx:id="start" text="START" alignment="BOTTOM_CENTER"
+                        onAction="#handleStartButton"></Button>
+
+            </HBox>
+            <HBox style="-fx-background-color: moccasin" spacing="10"
+                  alignment="CENTER">
+                <Label text="Initial inputs: Set the values and then press start"/>
+            </HBox>
+            <HBox fx:id="initialInputs" style="-fx-background-color: moccasin"
+                  spacing="10" minHeight="20" alignment="CENTER">
+                <TextField fx:id="setSize" text="Domino set size"
+                           alignment="TOP_LEFT" ></TextField>
+                <TextField fx:id="numHumans" text="Number of human players?"
+                           alignment="CENTER_LEFT" ></TextField>
+                <TextField fx:id="numComps" text="Number of computer players?"
+                           alignment="BOTTOM_LEFT" ></TextField>
+            </HBox>
+            <HBox fx:id="inputsLabel" style="-fx-background-color: moccasin"
+                  spacing="10" alignment="CENTER">
+                <Label text="Game inputs: Set these each round then click play to execute turn"/>
+            </HBox>
+            <HBox fx:id="inputs" style="-fx-background-color: moccasin" spacing="10"
+                  minHeight="30" alignment="CENTER">
+                <TextField fx:id="whichDomino" text="Domino number"
+                           alignment="TOP_LEFT" ></TextField>
+                <TextField fx:id="whichTrain" text="Train"
+                           alignment="CENTER_LEFT" ></TextField>
+                <TextField fx:id="flipDomino" text="Flip"
+                           alignment="BOTTOM_LEFT" ></TextField>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>
